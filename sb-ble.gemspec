@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.executables = ["rble".freeze]
   s.extra_rdoc_files = [
     "LICENSE",
-    "README.md",
     "README.org"
   ]
   s.files = [
@@ -26,7 +25,6 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
-    "README.md",
     "README.org",
     "Rakefile",
     "bin/rble",
@@ -45,6 +43,7 @@ Gem::Specification.new do |s|
     "lib/ble/service.rb",
     "lib/ble/uuid.rb",
     "lib/ble/version.rb",
+    "sb-ble.gemspec",
     "spec/ruby-ble_spec.rb",
     "spec/spec_helper.rb"
   ]
