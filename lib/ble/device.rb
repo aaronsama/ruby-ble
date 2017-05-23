@@ -34,7 +34,7 @@ module BLE
       self.refresh if @auto_refresh
 
       @o_dev[I_PROPERTIES]
-      .on_signal('PropertiesChanged') do |intf, props|
+        .on_signal('PropertiesChanged') do |intf, props|
         case intf
         when I_DEVICE
           case props['Connected']
@@ -59,7 +59,6 @@ module BLE
       else raise ScriptError
       end
     end
-
 
     # This method will connect to the remote device,
     # initiate pairing and then retrieve all SDP records

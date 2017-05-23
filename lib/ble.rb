@@ -19,7 +19,8 @@ module BLE
     I_PROXIMITY_REPORTER   = 'org.bluez.ProximityReporter1'
     I_PROPERTIES           = 'org.freedesktop.DBus.Properties'
     I_INTROSPECTABLE       = 'org.freedesktop.DBus.Introspectable'
-
+    I_LE_ADVERTISING       = 'org.bluez.LEAdvertisement1'
+    
     # Errors
     E_IN_PROGRESS          = 'org.bluez.Error.InProgress'
     E_FAILED               = 'org.bluez.Error.Failed'
@@ -103,6 +104,7 @@ require_relative 'ble/service'
 require_relative 'ble/char_registry'
 require_relative 'ble/characteristic'
 require_relative 'ble/agent'
+require_relative 'ble/le_advertising'
 
 require_relative 'ble/db_sig_service'
 require_relative 'ble/db_sig_characteristic'
