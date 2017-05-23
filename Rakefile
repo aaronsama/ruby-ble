@@ -17,20 +17,21 @@ require 'semver'
 def s_version
   SemVer.find.format "%M.%m.%p%s"
 end
+
 require 'juwelier'
+
 Juwelier::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "sb-ble"
   gem.homepage = "http://github.com/flajann2/ruby-ble"
   gem.license = "MIT"
   gem.summary = %Q{Bluetooth Low Energy for Ruby -- Sensorberg Version}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{This supports LE Advertising}
   gem.email = "frederick.mitchell@sensorberg.com"
   gem.authors = ["Fred Mitchell & Sensorberg"]
   gem.version = s_version
-
   # dependencies defined in Gemfile
 end
+
 Juwelier::RubygemsDotOrgTasks.new
 require 'rspec/core'
 require 'rspec/core/rake_task'
