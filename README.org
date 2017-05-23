@@ -3,8 +3,12 @@
   :CUSTOM_ID: ruby-ble
   :END:
 
-  Bluetooth Low Energy for Ruby -- Sensorberg Version
+  Bluetooth Low Energy for Ruby -- Sensorberg Version:
+
   [[https://badge.fury.io/rb/ble][[[https://badge.fury.io/rb/ble.svg]]]]
+
+  NOTE WELL: THIS IS UNDER DEVELOPMENT RIGHT NOW AND NOT
+  YET READY FOR SERIOUS USE
 
 ** Prelimaries
    This is a fork of a fork. More features are being added here,
