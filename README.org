@@ -1,0 +1,62 @@
+* sb-ble
+  :PROPERTIES:
+  :CUSTOM_ID: ruby-ble
+  :END:
+
+  Bluetooth Low Energy for Ruby -- Sensorberg Version
+  [[https://badge.fury.io/rb/ble][[[https://badge.fury.io/rb/ble.svg]]]]
+
+** Prelimaries
+   This is a fork of a fork. More features are being added here,
+   such as support for advertising.
+
+** Requirements
+   :PROPERTIES:
+   :CUSTOM_ID: requirements
+   :END:
+
+   -  ruby >= 2.3
+   -  Dbus
+   -  bluez >= 5.36 (available on debian testing)
+   -  =bluetoothd= started with option =-E= (experimental)
+
+** Examples
+   :PROPERTIES:
+   :CUSTOM_ID: examples
+   :END:
+
+#+BEGIN_SRC ruby
+    # Selecter adapter
+    $a = BLE::Adapter.new('hci0')
+    puts "Info: #{$a.iface} #{$a.address} #{$a.name}"
+
+    # Run discovery
+    $a.start_discovery
+    sleep(2)
+    $a.stop_discovery
+
+    # Get device and connect to it
+    $d = $a['F4:AD:CB:FB:B4:85']
+    $d.connect
+
+    # Get temperature from the environmental sensing service
+    $d[:environmental_sensing, :temperature]
+
+    # Dump device information
+    srv = :device_information
+    $d.characteristics(srv).each {|uuid|
+        info  = BLE::Characteristic[uuid]
+        name  = info.nil? ? uuid : info[:name]
+        value = $d[srv, uuid] rescue '/!\\ not-readable /!\\'
+        puts "%-30s: %s" % [ name, value ]
+    }
+#+END_SRC
+
+** Contributors
+   :PROPERTIES:
+   :CUSTOM_ID: contributors
+   :END:
+
+- Fred Mitchell (Sensorberg GmbH) LE Advertisement support
+- Oliver Valls (tramuntanal): Bug fixes / BLE Notification support
+- Stephane D'Alu
