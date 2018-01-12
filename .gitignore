@@ -36,3 +36,6 @@ build/
 
 # Specificc to Netbeans
 /nbproject/
+
+# For Rubymine
+.idea/

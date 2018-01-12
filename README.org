@@ -30,6 +30,7 @@
    :END:
 
 #+BEGIN_SRC ruby
+    require 'ble'
     # Selecter adapter
     $a = BLE::Adapter.new('hci0')
     puts "Info: #{$a.iface} #{$a.address} #{$a.name}"
