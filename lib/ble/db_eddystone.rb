@@ -1,12 +1,10 @@
 module BLE
-module Service
-    add 'ee0c2080-8786-40ba-ab96-99b91ac981d8',
-        name: 'Eddystone-URL Beacon Configuration'
-end
-end
+  module Service
+      add 'ee0c2080-8786-40ba-ab96-99b91ac981d8',
+          name: 'Eddystone-URL Beacon Configuration'
+  end
 
-module BLE
-class Characteristic
+  class Characteristic
   add 'ee0c2081-8786-40ba-ab96-99b91ac981d8',
         name: 'Eddystone Lock State',
         nick: :esurl_lockstate
@@ -46,5 +44,6 @@ class Characteristic
     add 'ee0c208a-8786-40ba-ab96-99b91ac981d8',
         name: 'Eddystone Radio Tx Power Levels',
         nick: :esurl_radio_txpower_levels
-end
+  end
+
 end

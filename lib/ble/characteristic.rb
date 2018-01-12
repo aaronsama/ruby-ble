@@ -18,20 +18,7 @@ module BLE
     def_delegators :@desc, :flag?, :uuid
 
     private
-    FLAGS    = [ 'broadcast',
-      'read',
-      'write-without-response',
-      'write',
-      'notify',
-      'indicate',
-      'authenticated-signed-writes',
-      'reliable-write',
-      'writable-auxiliaries',
-      'encrypt-read',
-      'encrypt-write',
-      'encrypt-authenticated-read',
-      'encrypt-authenticated-write' ]
-
+    FLAGS = %w(broadcast read write-without-response write notify indicate authenticated-signed-writes reliable-write writable-auxiliaries encrypt-read encrypt-write encrypt-authenticated-read encrypt-authenticated-write)
 
     #++++++++++++++++++++++++++++
     public

@@ -1,12 +1,12 @@
 module BLE
-module Service
+  module Service
     add 0x1800,
         name: 'Generic Access',
         type: 'org.bluetooth.service.generic_access'
 
     add 0x1801,
         name: 'Generic Attribute',
-        type: 'org.bluetooth.service.generic_attribute' 
+        type: 'org.bluetooth.service.generic_attribute'
 
     add 0x1802,
         name: 'Immediate Alert',
@@ -19,15 +19,15 @@ module Service
     add 0x1804,
         name: 'Tx Power',
         type: 'org.bluetooth.service.tx_power'
-    
+
     add 0x1805,
         name: 'Current Time Service',
-	type: 'org.bluetooth.service.current_time'
+        type: 'org.bluetooth.service.current_time'
 
     add 0x180A,
         name: 'Device Information',
-	type: 'org.bluetooth.service.device_information'
-    
+        type: 'org.bluetooth.service.device_information'
+
     add 0x180F,
         name: 'Battery Service',
         type: 'org.bluetooth.service.battery_service'
@@ -55,5 +55,5 @@ module Service
     add 0x181D,
         name: 'Weight Scale',
         type: 'org.bluetooth.service.weight_scale'
-end
+  end
 end

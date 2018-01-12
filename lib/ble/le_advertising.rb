@@ -7,13 +7,13 @@ module BLE
       end
 
       #(object advertisement, dict options)
-      dbus_method :RegisterAdvertisement do 
+      dbus_method :RegisterAdvertisement do
       end
-      
+
       #(object advertisement)
-      dbus_method :UnregisterAdvertisement do        
+      dbus_method :UnregisterAdvertisement do
       end
-      
+
     end
   end
 end
