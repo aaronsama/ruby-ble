@@ -7,8 +7,8 @@ describe 'Ruby-ble' do
     BLE::Adapter.list
     a = BLE::Adapter.new('hci0')
     a.start_discovery
-    sleep(10)
+    sleep(2)
     a.stop_discovery
-    a.devices
+    print a.devices
   end
 end
