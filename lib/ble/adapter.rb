@@ -12,7 +12,7 @@ module BLE
     def self.list
       o_bluez = BLUEZ.object('/org/bluez')
       o_bluez.introspect
-      o_bluez.subnodes.reject {|adapter| ['test'].include?(adapter) }
+      o_bluez.subnodes.reject { |adapter| ['test'].include?(adapter) }
     end
 
     # Create a new Adapter
@@ -22,15 +22,10 @@ module BLE
       @iface     = iface.dup.freeze
       @o_adapter = BLUEZ.object("/org/bluez/#{@iface}")
       @o_adapter.introspect
-
-      # @o_adapter[I_PROPERTIES]
-      #     .on_signal('PropertiesChanged') do |intf, props|
-      #     end
-      # end
     end
 
-      # The Bluetooth interface name
-      # @return [String] name of the Unix device
+    # The Bluetooth interface name
+    # @return [String] name of the Unix device
     def iface
       @iface
     end
@@ -89,22 +84,21 @@ module BLE
     # @return [self]
     def filter(uuids, rssi: nil, pathloss: nil, transport: :le)
       unless [:auto, :bredr, :le].include?(transport)
-          raise ArgumentError,
-                "transport must be one of :auto, :bredr, :le"
+        raise ArgumentError, "transport must be one of :auto, :bredr, :le"
       end
-      filter = { }
+      filter = {}
 
       unless uuids.nil? || uuids.empty?
-          filter['UUIDs'    ] = DBus.variant('as', uuids)
+        filter['UUIDs'    ] = DBus.variant('as', uuids)
       end
       unless rssi.nil?
-          filter['RSSI'     ] = DBus.variant('n',  rssi)
+        filter['RSSI'     ] = DBus.variant('n',  rssi)
       end
       unless pathloss.nil?
-          filter['Pathloss' ] = DBus.variant('q',  pathloss)
+        filter['Pathloss' ] = DBus.variant('q',  pathloss)
       end
       unless transport.nil?
-          filter['Transport'] = DBus.variant('s',  transport.to_s)
+        filter['Transport'] = DBus.variant('s',  transport.to_s)
       end
 
       @o_adapter[I_ADAPTER].SetDiscoveryFilter(filter)

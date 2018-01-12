@@ -1,18 +1,18 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "ruby-dbus"
+gem 'ruby-dbus'
 
 group :development do
-  gem "rspec"
-  gem "yard"
-  gem "rdoc"
-  gem "bundler"
-  gem "juwelier"
-  gem "simplecov"
-  gem "pry"
-  gem "pry-byebug"
-  gem "pry-doc"
-  gem "pry-remote"
-  gem "pry-rescue"
-  gem "pry-stack_explorer"
+  gem 'bundler'
+  gem 'juwelier'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-remote'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+  gem 'rdoc'
+  gem 'rspec'
+  gem 'simplecov'
+  gem 'yard'
 end
